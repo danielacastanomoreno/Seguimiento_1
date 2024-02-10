@@ -60,36 +60,8 @@ public class InfrastructureDepartament {
             importData(line);
             line = br.readLine();
 
-            //String[] columns = line.split("\\|");
-            //System.out.println("Tamano: " + columns.length);
-            //System.out.println(Arrays.toString(columns));
-            //double w = Double.parseDouble(columns[0]);
-            //double h = Double.parseDouble(columns[1]);
-            //boolean iu = Boolean.parseBoolean(columns[2]);
-            //Billboard billb = new Billboard(w, h, iu, columns[3]);
-
-            // Acumuladores
-            //acum_area += billb.calculateArea();
-            //acum_w += billb.getWidth();
-            //acum_h += billb.getHeight();
-
-            //contador ++;
-
-
-            //TAREA = utilizar split para separar datos de cada columna y asignarlos al arreglo. ¡OJO!
-            // Promedio de las alturas, anchos y areas. ¡OJO!
-
         }
 
-        // Calculo promedios
-        //double promedio_anchos = acum_w / contador;
-        //double promedio_alturas = acum_h / contador;
-        //double promedio_areas = acum_area / contador;
-
-        //System.out.println("--------------------------------- PROMEDIOS -------------------------------------------");
-        //System.out.println("Promedio de anchos: " + promedio_anchos);
-        //System.out.println("Promedio de alturas: " + promedio_alturas);
-        //System.out.println("Promedio de areas: " + promedio_areas);
 
         br.close();
         fr.close();
@@ -208,7 +180,7 @@ public class InfrastructureDepartament {
     }
 
     // This method count the number of billboards for brand
-    public String[] countBillboardsForBrand() {
+    public void countBillboardsForBrand() {
 
         // Arreglo de String
         //String[] differentBrands = new String[1];
@@ -219,42 +191,52 @@ public class InfrastructureDepartament {
         ArrayList<Integer> numbers = new ArrayList<>();
 
         // Inicializo
-        brands.add("Auctor Quis Tristique Corp.");
+        brands.add(billboards.get(0).getBrand());
         numbers.add(1);
+
+        System.out.println("Tamano brands: " + brands.size());
+        System.out.println("Tamano cuenta: " + numbers.size());
+        System.out.println("Tamano Billboards: " + billboards.size());
+
+        boolean flag = false;
 
         // Recorro el ArrayList y voy contando el numero de marcas diferentes.
         // Despues, hago un arreglo
 
-        for(int i = 0; i < billboards.size(); i++) {
+        for(int i = 1; i < billboards.size(); i++) {
 
-            if(billboards.get(i).getBrand().equals(brands.get(0))) {
+            for(int j = 0; j < brands.size(); j++) {
 
-                // aumenta el numero++
-                numbers.size()++;
+                if(brands.get(j).equals(billboards.get(i).getBrand())) {
+                    flag = true;
+                    // aumenta el numero++
+                    numbers.set(j, numbers.get(j)+1);
+
+                }
+
 
             }
 
-            else {
+            if(!flag) {
 
-                    // lo meto en el arreglo
+                System.out.println("Tamano brands: " + brands.size());
+                //System.out.println("Tamano cuenta: " + numbers.size());
+
+                // lo meto en el arreglo
                 brands.add(billboards.get(i).getBrand());
+                numbers.add(1);
 
             }
 
         }
 
-        //System.out.println("Tamano: " + differentBrands.length);
 
-        //return brands;
+        String result_1 = brands.toString();
+        String result_2 = numbers.toString();
 
-        //for(int i = 0; i < differentBrands.length; i++) {
-
-          //  System.out.println(differentBrands[i]);
-
-        //}
-
-
-        //return differentBrands;
+        System.out.println("Marcas: " + result_1);
+        System.out.println("---------------------------------");
+        System.out.println("Numeros: " + result_2);
 
     }
 

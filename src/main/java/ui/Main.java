@@ -28,10 +28,10 @@ public class Main {
         System.out.println("NUMBER OF ACTIVES: " + id.countActivesBillboards());
 
         // Billboards for brand:
-        System.out.println("BRANDS: " + id.countBillboardsForBrand());
-
-        System.out.println();
-
+        //System.out.println("BRANDS: " + id.countBillboardsForBrand());
+        System.out.println("MARCAS: -----");
+        System.out.println("TAMANO: " + id.billboards.size());
+        id.countBillboardsForBrand();
 
 
     }
