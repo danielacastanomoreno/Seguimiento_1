@@ -16,6 +16,9 @@ public class InfrastructureDepartament {
 
     public ArrayList<Billboard> billboards;
 
+    public ArrayList<String> brands;
+    public ArrayList<Integer> numbers;
+
     public InfrastructureDepartament(String ruta) throws Exception {
 
         BILLBOARD_FILE_NAME = ruta;
@@ -187,8 +190,8 @@ public class InfrastructureDepartament {
         //differentBrands[0] = "Auctor Quis Tristique Corp." + ", ";
 
         // I create the ArrayList
-        ArrayList<String> brands = new ArrayList<String>();
-        ArrayList<Integer> numbers = new ArrayList<>();
+        brands = new ArrayList<String>();
+        numbers = new ArrayList<>();
 
         // Inicializo
         brands.add(billboards.get(0).getBrand());
@@ -209,7 +212,8 @@ public class InfrastructureDepartament {
 
                 if(brands.get(j).equals(billboards.get(i).getBrand())) {
                     flag = true;
-                    // aumenta el numero++
+
+                    // Aumento un 1
                     numbers.set(j, numbers.get(j)+1);
 
                 }
@@ -219,10 +223,7 @@ public class InfrastructureDepartament {
 
             if(!flag) {
 
-                System.out.println("Tamano brands: " + brands.size());
-                //System.out.println("Tamano cuenta: " + numbers.size());
-
-                // lo meto en el arreglo
+                // Ingreso marca en el arreglo
                 brands.add(billboards.get(i).getBrand());
                 numbers.add(1);
 

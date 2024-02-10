@@ -33,7 +33,6 @@ public class Main {
         System.out.println("TAMANO: " + id.billboards.size());
         id.countBillboardsForBrand();
 
-
     }
 
 }

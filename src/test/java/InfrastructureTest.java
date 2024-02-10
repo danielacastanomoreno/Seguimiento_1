@@ -105,7 +105,7 @@ public class InfrastructureTest {
         // Scenario 1:
         //InfrastructureDepartament scenario_1 = new InfrastructureDepartament("prueba_1.csv");
         //double counter_brands_1 = scenario_1.countBillboardsForBrand();
-        //Assert.assertEquals(2.0, counter_brands_1, 0.0);
+        //Assert.assertEquals(3.0, counter_brands_1, 0.0);
 
         // Scenario 2:
         //InfrastructureDepartament scenario_2 = new InfrastructureDepartament("prueba_2.csv");
